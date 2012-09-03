@@ -1,0 +1,12 @@
+{application, ci_quickstart,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, { ci_quickstart_app, []}},
+  {env, []}
+ ]}.
