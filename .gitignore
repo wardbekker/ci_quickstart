@@ -5,3 +5,4 @@ deps
 *.beam
 *.plt
 ebin
+logs
