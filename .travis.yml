@@ -6,7 +6,5 @@ otp_release:
   - R15B
   - R14B04
   - R14B03
-script:
-  rebar compile && rebar skip_deps=true eunit && rebar skip_deps=true ct
-after_script:
-  tar cvfz test_log.tar .eunit/ logs/ && curl -F "filedata=@test_log.tar" http://ci_asset_helper.equanimity.nl/ 
+script: rebar compile && rebar skip_deps=true eunit && rebar skip_deps=true ct
+after_script: tar cvfz test_log.tar .eunit/ logs/ && curl -F "filedata=@test_log.tar" http://ci_asset_helper.equanimity.nl/ 
