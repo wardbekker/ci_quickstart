@@ -78,9 +78,9 @@ De uitdaging bij het werken met QuickCheck is het bedenken van de eigenschappen 
 
 ## Common test ## {#common}
 
-Zoals bekend is Erlang uitermate geschikt voor het bouwen van concurrent, distrubuted en fault tolerant systemen. Om te controleren of je systeem werkt zoals beloofd, is heel lastig.
+Zoals bekend is Erlang uitermate geschikt voor het bouwen van concurrent, distrubuted en fault tolerant systemen. Om te controleren of je systeem werkt zoals beloofd, is complex.
 
-Hiervoor is Common Test in het leven geroepen. Dit krachtige test framework is uitermate geschikt voor de ontwikkeling van pittige systeem tests. De inherente complexiteit van concurrent, distrubuted en fault tolerant systemen maakt ook Common Test complex. Hoe je een serieuze OTP applicatie op de pijnbank legt met CT valt derhalve buiten de scope van deze blogpost. 
+Hiervoor is Common Test in het leven geroepen. Dit krachtige test framework is uitermate geschikt voor de ontwikkeling van pittige systeem tests. De inherente complexiteit van concurrent, distributed en fault tolerant systemen maakt ook Common Test complex. Hoe je een serieuze OTP applicatie op de pijnbank legt met CT valt derhalve buiten de scope van deze blogpost. 
 
 ```erlang
 -module(basic_SUITE).
