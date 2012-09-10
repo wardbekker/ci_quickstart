@@ -63,6 +63,8 @@ Wat je eigenlijk wil is een test methode dat alle mogelijke input variaties kan 
 *  [ProPEr](https://github.com/manopapad/proper)
 * [Triq](https://github.com/krestenkrab/triq)
 
+Een Quickcheck test voor de `addition` functie:
+
 ```erlang
 prop_sum() ->
     ?FORALL({X, Y}, {int(), int()}, addition(X,Y) - Y == X).
