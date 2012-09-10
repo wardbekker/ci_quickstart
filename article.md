@@ -2,15 +2,35 @@
 
 Erlang/OTP is ontworpen voor het bouwen van grote, schaalbare, soft-realtime systemen met een hoge beschikbaarheid. Het testen van dergelijke systemen is niet eenvoudig, laat staan [[geautomatiseerd testen]]. Voor Erlang zijn er dan ook geavanceerde automatische test methoden beschikbaar.
 
-De drie belangrijkste methoden worden hier kort besproken aan de hand van een test project. Het project staat op github.
+De drie belangrijkste methoden worden hier kort besproken aan de hand van een test project. Je kan het test project *clonen* van Github met het volgende commando: 
 
+```bash
 git clone git@github.com:wardbekker/ci_quickstart.git
+```
 
 ## Unit testing met EUnit
 
 We beginnen bij de eenvoudigste; EUnit. Dit is een unit testing bibliotheek voor Erlang. In een unit test controleer je of de functie goed werkt bij bekende input en resultaat. 
 
-<script src="https://gist.github.com/3690396.js?file=ci_quickstart_math.erl"></script>
+```erlang
+-module(ci_quickstart_math).
+-export([addition/2]).
+
+-ifdef(TEST).
+-include_lib("eunit/include/eunit.hrl").
+-endif.
+
+addition(X, Y) ->
+    X + Y.
+
+-ifdef(TEST).
+
+simple_test() ->
+    ?assertEqual(4, addition(2,2)),
+    ?assertNotEqual(3, addition(1,1)).
+
+-endif.
+```
 
 Het slechte nieuws is dat de waarde van deze test zeer laag is. Weten we nu zeker dat optelling goed gaat in alle gevallen? Het enige wat de test nu aantoond is dat het goed gaat voor deze inputs en niet goed gaat bij deze inputs. Stel, ik herschrijf de functie. Uiteraard compleet verkeerd, maar de testen blijven gewoon 'green'. Stel, de argumenten zijn [[Small integers]], en die hebben een bereik van -576460752303423489 tot 576460752303423488. Met twee argumenten, betekend dit dat er enorm veel verschillende input mogelijk is. En in de unit test doen we er maar 3!?!?  Ook al ben je een harde werker en test je wel 10! addities, in feite is de waarde van de unit test niet verbeterd en nog steeds erg laag. 
 
