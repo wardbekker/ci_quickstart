@@ -14,7 +14,7 @@ Je kan het test project *clonen* van Github met het volgende commando:
 git clone git@github.com:wardbekker/ci_quickstart.git
 ```
 
-## Unit testing met EUnit ## {#unit}
+## Unit testing met EUnit ##
 
 We beginnen bij de eenvoudigste; EUnit. Dit is een unit testing bibliotheek voor Erlang. In een unit test controleer je of de functie goed werkt bij bekende input en resultaat. 
 
@@ -55,7 +55,7 @@ De testen slagen in dit geval, maar dit betekend niet dat de implementatie van `
 
 Sterker nog; De argumenten zijn in dit geval [64-bit small integers](http://www.erlang.org/doc/efficiency_guide/advanced.html), en die hebben een bereik van -576460752303423489 t/m 576460752303423488. Met twee argumenten, betekend dit dat er enorm veel verschillende input mogelijk is. En in de unit test doen we er maar 3!?!?  Ook al ben je een harde werker en test je wel 10! addities, in feite is de waarde van de unit test niet verbeterd en nog steeds erg laag. Wat nu?
 
-## QuickCheck ## {#quickcheck}
+## QuickCheck ##
 
 Wat je eigenlijk wil is een test methode dat alle mogelijke input variaties kan genereren en de bijbehorende output kan controleren. Deze methode heet [QuickCheck](http://en.wikipedia.org/wiki/QuickCheck). Voor Erlang zijn er een aantal QuickCheck frameworks beschikbaar:
 
@@ -78,11 +78,11 @@ De uitdaging bij het werken met QuickCheck is het bedenken van de eigenschappen 
 
 [[Naast testen van functie eigenschappen is Quickcheck erg goed in het testen van zgn .State Machine. Een goed voorbeeld hiervan is de controle van de beloofde eventual concisteit van Basho's Riak, een populair distribueerd database systeem gemaakt in Erlang. Zie hiervoor de slides van xxxxx. ]]
 
-## Common test ## {#common}
+## Common test ##
 
-Zoals bekend is Erlang uitermate geschikt voor het bouwen van concurrent, distrubuted en fault tolerant systemen. Om te controleren of je systeem werkt zoals beloofd, is complex.
+Zoals bekend is Erlang uitermate geschikt voor het bouwen van concurrent, distrubuted en fault tolerant systemen. Om te controleren of je systeem werkt zoals verwacht, is complex.
 
-Hiervoor is Common Test in het leven geroepen. Dit krachtige test framework is uitermate geschikt voor de ontwikkeling van pittige systeem tests. De inherente complexiteit van concurrent, distributed en fault tolerant systemen maakt ook Common Test complex. Hoe je een serieuze OTP applicatie op de pijnbank legt met CT valt derhalve buiten de scope van deze blogpost. 
+Hiervoor is [Common Test](http://www.erlang.org/doc/apps/common_test/basics_chapter.html) in het leven geroepen. Dit krachtige test framework is uitermate geschikt voor de ontwikkeling van pittige [systeem tests](http://en.wikipedia.org/wiki/System_testing). De inherente complexiteit van concurrent, distributed en fault tolerant systemen maakt ook Common Test complex. Hoe je een serieuze OTP applicatie op de pijnbank legt met CT valt derhalve buiten de scope van deze blogpost. 
 
 ```erlang
 -module(basic_SUITE).
@@ -116,10 +116,4 @@ Elke keer als je nu nieuwe code naar github 'pushed', worden de autmatische test
 
 ## Samenvatting.
 
-
-
-
-
-
-
-
+TODO
