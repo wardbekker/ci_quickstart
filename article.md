@@ -1,12 +1,12 @@
 # Geautomatiseerd testen met Erlang/OTP
 
-Erlang/OTP is ontworpen voor het bouwen van grote, schaalbare, soft-realtime systemen met een hoge beschikbaarheid. Het testen van dergelijke systemen is niet eenvoudig, laat staan [[geautomatiseerd testen]]. Voor Erlang zijn er dan ook geavanceerde automatische test methoden beschikbaar.
+Erlang/OTP is ontworpen voor het bouwen van grote, schaalbare, soft-realtime systemen met een hoge beschikbaarheid. Het testen van dergelijke systemen is niet eenvoudig, laat staan [geautomatiseerd testen](http://en.wikipedia.org/wiki/Software_testing#Automated_testing). Voor Erlang zijn er dan ook geavanceerde automatische test methoden beschikbaar.
 
 De drie belangrijkste methoden worden hier kort besproken aan de hand van een test project. De methoden zijn:
 
-* [Unit testing](#unit)
+* [Unit testing](#unit-testing-met-eunit)
 * [Quickcheck](#quickcheck)
-* [Common test](#common)
+* [Common test](#common-test)
 
 Je kan het test project *clonen* van Github met het volgende commando: 
 
@@ -16,7 +16,7 @@ git clone git@github.com:wardbekker/ci_quickstart.git
 
 ## Unit testing met EUnit ##
 
-We beginnen bij de eenvoudigste; EUnit. Dit is een unit testing bibliotheek voor Erlang. In een unit test controleer je of de functie goed werkt bij bekende input en resultaat. 
+We beginnen bij de eenvoudigste; [EUnit](http://www.erlang.org/doc/apps/eunit/chapter.html). Dit is een unit testing bibliotheek voor Erlang. In een unit test controleer je of de functie goed werkt bij bekende input en resultaat. 
 
 ```erlang
 -module(ci_quickstart_math).
@@ -53,13 +53,15 @@ Stel, we veranderen de function `addition`:
 
 De testen slagen in dit geval, maar dit betekend niet dat de implementatie van `addition` correct is.
 
-Sterker nog; De argumenten zijn in dit geval [64-bit small integers](http://www.erlang.org/doc/efficiency_guide/advanced.html), en die hebben een bereik van -576460752303423489 t/m 576460752303423488. Met twee argumenten, betekend dit dat er enorm veel verschillende input mogelijk is. En in de unit test doen we er maar 3!?!?  Ook al ben je een harde werker en test je wel 10! addities, in feite is de waarde van de unit test niet verbeterd en nog steeds erg laag. Wat nu?
+Sterker nog; De argumenten zijn in dit geval [64-bit small integers](http://www.erlang.org/doc/efficiency_guide/advanced.html), en die hebben een bereik van -576460752303423489 t/m 576460752303423488. Met twee argumenten, betekend dit dat er enorm veel verschillende input mogelijk is. En in de unit test doen we er maar 3!?!?  Ook al ben je een harde werker en test je wel 10! addities, in feite is de waarde van de unit test niet verbeterd en nog steeds erg laag. 
+
+Wat nu?
 
 ## QuickCheck ##
 
 Wat je eigenlijk wil is een test methode dat alle mogelijke input variaties kan genereren en de bijbehorende output kan controleren. Deze methode heet [QuickCheck](http://en.wikipedia.org/wiki/QuickCheck). Voor Erlang zijn er een aantal QuickCheck frameworks beschikbaar:
 
-*  [Quvic QuickCheck](http://www.quviq.com). 
+*  [Quvic QuickCheck](http://www.quviq.com)
 *  [ProPEr](https://github.com/manopapad/proper)
 * [Triq](https://github.com/krestenkrab/triq)
 
