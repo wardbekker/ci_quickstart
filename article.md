@@ -114,10 +114,7 @@ Er zijn legio systemen waarmee het mogelijk is om dit voor Erlang op te zetten. 
 
 ### Travis-CI Setup
 
-[![Setup][2]][1]
-
-    [1]: http://www.youtube.com/embed/YxJJu6mShiA
-    [2]: https://raw.github.com/wardbekker/ci_quickstart/master/images/signing_and_switch.png
+<a href="http://www.youtube.com/embed/YxJJu6mShiA">![Setup](https://raw.github.com/wardbekker/ci_quickstart/master/images/signing_and_switch.png)</a>
 
 ### Travis-CI Success Run
 
