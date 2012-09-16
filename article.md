@@ -112,6 +112,23 @@ Stel, je hebt een flinke hoeveelheid automatische testen geïmplementeerd. Het d
 
 Er zijn legio systemen waarmee het mogelijk is om dit voor Erlang op te zetten. In deze post gebruiken we het hosted systeem [Travis-CI](http://travis-ci.org). Deze dienst ondersteunt Erlang, integreert met het Populaire github en zorgt voor een vliegende start. En het is gratis voor open source projecten. 
 
+### Travis-CI Setup
+
+<iframe width="420" height="315" src="http://www.youtube.com/embed/YxJJu6mShiA" frameborder="0" allowfullscreen></iframe>
+
+### Travis-CI Success Run
+
+<iframe width="420" height="315" src="http://www.youtube.com/embed/rJWRY1Uf_qg" frameborder="0" allowfullscreen></iframe>
+
+
+### Travis-CI Failure Run
+
+<iframe width="420" height="315" src="http://www.youtube.com/embed/5u8Kpz3m8ho" frameborder="0" allowfullscreen></iframe>
+
+<img src="images/broken_email.png" /> 
+
+<img src="images/fixed_email.png" /> 
+
 In dit filmje wordt uitgelegd hoe je je erlang project kan laten testen door Travis-CI.
 
 Als de instructies goed zijn opgevolgd krijg je de volgende mail binnen als alle testen slagen.
