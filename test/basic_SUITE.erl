@@ -10,4 +10,4 @@ test1(_Config) ->
     3 = ci_quickstart_math:addition(1,2).
 
 test2(_Config) ->
-    2 = ci_quickstart_math:addition(1,1).
+    1 = ci_quickstart_math:addition(1,1).
