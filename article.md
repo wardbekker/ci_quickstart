@@ -114,16 +114,16 @@ Er zijn legio systemen waarmee het mogelijk is om dit voor Erlang op te zetten. 
 
 ### Travis-CI Setup
 
-<a href="http://www.youtube.com/embed/YxJJu6mShiA">![Setup](https://raw.github.com/wardbekker/ci_quickstart/master/images/signing_and_switch.png)</a>
+<a href="http://www.youtube.com/watch?v=YxJJu6mShiA">![Setup](https://raw.github.com/wardbekker/ci_quickstart/master/images/signing_and_switch.png)</a>
 
 ### Travis-CI Success Run
 
-<iframe width="420" height="315" src="http://www.youtube.com/embed/rJWRY1Uf_qg" frameborder="0" allowfullscreen></iframe>
+<a href="http://www.youtube.com/watch?v=rJWRY1Uf_qg">![Setup](https://raw.github.com/wardbekker/ci_quickstart/master/images/success.png)</a>
 
 
 ### Travis-CI Failure Run
 
-<iframe width="420" height="315" src="http://www.youtube.com/embed/5u8Kpz3m8ho" frameborder="0" allowfullscreen></iframe>
+<a href="http://www.youtube.com/watch?v=5u8Kpz3m8ho">![Setup](https://raw.github.com/wardbekker/ci_quickstart/master/images/failure.png)</a>
 
 ![Broken Build E-mail notification](https://raw.github.com/wardbekker/ci_quickstart/master/images/broken_email.png)
 
