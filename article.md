@@ -118,12 +118,12 @@ Er zijn legio systemen waarmee het mogelijk is om dit voor Erlang op te zetten. 
 
 ### Travis-CI Success Run
 
-<a href="http://www.youtube.com/watch?v=rJWRY1Uf_qg">![Setup](https://raw.github.com/wardbekker/ci_quickstart/master/images/success.png)</a>
+<a href="http://www.youtube.com/watch?v=rJWRY1Uf_qg">![Success](https://raw.github.com/wardbekker/ci_quickstart/master/images/success.png)</a>
 
 
 ### Travis-CI Failure Run
 
-<a href="http://www.youtube.com/watch?v=5u8Kpz3m8ho">![Setup](https://raw.github.com/wardbekker/ci_quickstart/master/images/failure.png)</a>
+<a href="http://www.youtube.com/watch?v=5u8Kpz3m8ho">![Fail](https://raw.github.com/wardbekker/ci_quickstart/master/images/fail.png)</a>
 
 ![Broken Build E-mail notification](https://raw.github.com/wardbekker/ci_quickstart/master/images/broken_email.png)
 
