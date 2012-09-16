@@ -125,9 +125,9 @@ Er zijn legio systemen waarmee het mogelijk is om dit voor Erlang op te zetten. 
 
 <iframe width="420" height="315" src="http://www.youtube.com/embed/5u8Kpz3m8ho" frameborder="0" allowfullscreen></iframe>
 
-![Broken Build E-mail notification](images/broken_email.png)
+![Broken Build E-mail notification](https://raw.github.com/wardbekker/ci_quickstart/master/images/broken_email.png)
 
-![Fixed Build E-mail notification](images/fixed_email.png)
+![Fixed Build E-mail notification](https://raw.github.com/wardbekker/ci_quickstart/master/images/fixed_email.png)
 
 In dit filmje wordt uitgelegd hoe je je erlang project kan laten testen door Travis-CI.
 
