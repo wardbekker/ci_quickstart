@@ -111,6 +111,12 @@ Stel, je hebt een flinke hoeveelheid automatische testen geïmplementeerd. Het d
 
 Er zijn legio systemen waarmee het mogelijk is om dit voor Erlang op te zetten. In deze post wordt het hosted systeem [Travis-CI](http://travis-ci.org) gebruikt als voorbeeld. Deze dienst ondersteunt Erlang, integreert met het Populaire github en zorgt voor een vliegende start. En het is gratis voor open source projecten. 
 
+TODO:
+
+* Toevoegen .travis.yml
+* Setup
+* En vanaf dan wordt er bij elke push gebuild.
+
 ### Travis-CI Setup
 
 Deze video toont hoe je start met Travis-CI:
