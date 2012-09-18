@@ -132,7 +132,7 @@ Deze video toont hoe je start met Travis-CI:
 
 * Log in met je Github account gegevens.
 * Ga naar de Travis-CI *profile* pagina.
-* Schakel de gewenste Github *repository*  aan.
+* Schakel de gewenste Github *repository* in.
 
 That's it!
 
