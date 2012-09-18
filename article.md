@@ -109,7 +109,7 @@ test2(_Config) ->
 
 Stel, je hebt een flinke hoeveelheid automatische testen geïmplementeerd. Het draaien van alle geavanceerde testen kan hierdoor lang duren en je ontwikkel systeem flink belasten Om deze, en [nog meer goede redenen](http://en.wikipedia.org/wiki/Continuous_integration#Advantages_and_disadvantages), is [Continuous integration](http://en.wikipedia.org/wiki/Continuous_integration) aan te raden. 
 
-Er zijn legio systemen waarmee het mogelijk is om dit voor Erlang op te zetten. In deze post wordt het hosted systeem [Travis-CI](http://travis-ci.org) gebruikt als voorbeeld. Deze dienst ondersteunt Erlang, integreert met het Populaire github en zorgt voor een vliegende start. En het is gratis voor open source projecten. 
+Er zijn legio systemen waarmee het mogelijk is om dit voor Erlang op te zetten. In deze post wordt het hosted systeem [Travis-CI](http://travis-ci.org) gebruikt als voorbeeld. Deze dienst ondersteunt Erlang, integreert met het populaire Github en zorgt voor een vliegende start. En het is gratis voor open source projecten. 
 
 TODO:
 
@@ -127,21 +127,21 @@ Deze video toont hoe je start met Travis-CI:
 
 That's it!
 
-<a href="http://www.youtube.com/watch?v=YxJJu6mShiA" target="_blank">![Setup](https://raw.github.com/wardbekker/ci_quickstart/master/images/signing_and_switch.png)</a>
+<a href="http://www.youtube.com/watch?v=YxJJu6mShiA&hd=1" target="_blank">![Setup](https://raw.github.com/wardbekker/ci_quickstart/master/images/signing_and_switch.png)</a>
 
 ### Travis-CI Success Run
 
 Deze video toont hoe Travis-CI een geslaagde *integration build*
 rapporteerd:
 
-<a href="http://www.youtube.com/watch?v=rJWRY1Uf_qg" target="_blank">![Success](https://raw.github.com/wardbekker/ci_quickstart/master/images/success.png)</a>
+<a href="http://www.youtube.com/watch?v=rJWRY1Uf_qg&hd=1" target="_blank">![Success](https://raw.github.com/wardbekker/ci_quickstart/master/images/success.png)</a>
 
 ### Travis-CI Failure Run
 
 Deze video toont hoe Travis-CI een mislukte *integration build*
 rapporteerd:
 
-<a href="http://www.youtube.com/watch?v=5u8Kpz3m8ho" target="_blank">![Fail](https://raw.github.com/wardbekker/ci_quickstart/master/images/fail.png)</a>
+<a href="http://www.youtube.com/watch?v=5u8Kpz3m8ho&hd=1" target="_blank">![Fail](https://raw.github.com/wardbekker/ci_quickstart/master/images/fail.png)</a>
 
 Als je e-mail adres in `.travis.yml` staat, krijg je ook een e-mail notificatie dat de laatste *commit* de build gebroken heeft:
 
