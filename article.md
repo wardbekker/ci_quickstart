@@ -92,9 +92,11 @@ prop_sum() ->
     ).
 ```
 
+Voer de test uit door de Erlang Shell op te starten met `./shell.sh` en de volgende functie aanroep `proper:quickcheck(ci_quickstart_math:prop_sum()).`
+
 Specifieke nummers worden niet getest. Je gaat nu controleren of de functie voldoet aan de eigenschap dat als je Y weer er afhaalt, je X overhoud.
 
-Bij elke test genereert Quickcheck random integers voor elk argument. Standaard worden er 100 combinaties getest, en dit aantal voer je op .
+Bij elke test genereert Quickcheck random integers voor elk argument. Standaard worden er 100 combinaties getest, en dit aantal voer je op met de `numtests` optie: `proper:quickcheck(ci_quickstart_math:prop_sum(),[{numtests,10000}]).`. 
 
 De uitdaging bij het werken met QuickCheck is het bedenken van de eigenschappen van de functie. Dit is lastiger dan het maken van een unit test. Sterker nog, het schrijven van de functie is vaak nog eenvoudiger dan het redeneren over de eigenschappen. Het positieve effect van QuickCheck op de kwaliteit van je code, en de manier waarop je als developer over je code nadenkt maakt deze tool een zeer waardevol onderdeel van je test gereedschapskist.
 
