@@ -16,7 +16,7 @@ git clone git@github.com:wardbekker/ci_quickstart.git
 
 ## Unit testing met EUnit ##
 
-We beginnen bij de eenvoudigste; [EUnit](http://www.erlang.org/doc/apps/eunit/chapter.html). Dit is een unit testing bibliotheek voor Erlang. In een unit test controleer je of de functie goed werkt bij bekende input en resultaat. 
+Je begint met de eenvoudigste test methode; [EUnit](http://www.erlang.org/doc/apps/eunit/chapter.html). Dit is een unit testing bibliotheek voor Erlang. In een unit test controleer je of de functie goed werkt bij bekende input en resultaat. 
 
 ```erlang
 -module(ci_quickstart_math).
@@ -38,13 +38,12 @@ simple_test() ->
 -endif.
 ```
 
-Het slechte nieuws is dat de waarde van deze test zeer laag is. Weten we nu zeker dat optelling goed gaat in alle gevallen? Het enige wat de test nu aantoont is dat:
+Het slechte nieuws is dat de waarde van deze test zeer laag is. Weet je nu zeker dat optelling goed gaat in alle gevallen? Het enige wat de test nu aantoont is dat:
 
 * `addition(2,2) == 4`
 * `addition(1,1) /= 3`
 
-Stel, we veranderen de function `addition`:
-
+Stel, je verandert de function `addition`:
 
 ```erlang
  addition(X, Y) ->
@@ -53,7 +52,7 @@ Stel, we veranderen de function `addition`:
 
 De testen slagen in dit geval, maar dit betekend niet dat de implementatie van `addition` correct is.
 
-Sterker nog; De argumenten zijn in dit geval [64-bit small integers](http://www.erlang.org/doc/efficiency_guide/advanced.html), en die hebben een bereik van -576460752303423489 t/m 576460752303423488. Met twee argumenten, betekend dit dat er enorm veel verschillende input mogelijk is. En in de unit test doen we er maar 3!?!?  Ook al ben je een harde werker en test je wel 10! addities, in feite is de waarde van de unit test niet verbeterd en nog steeds erg laag. 
+Sterker nog; De argumenten zijn in dit geval [64-bit small integers](http://www.erlang.org/doc/efficiency_guide/advanced.html), en die hebben een bereik van -576460752303423489 t/m 576460752303423488. Met twee argumenten, betekend dit dat er enorm veel verschillende input mogelijk is. En in de unit test controleer je er maar 3!?!?  Ook al ben je een harde werker en test je wel 10! addities, in feite is de waarde van de unit test niet verbeterd en nog steeds erg laag. 
 
 Wat nu?
 
@@ -76,7 +75,7 @@ prop_sum() ->
     ).
 ```
 
-Specifieke nummers worden niet getest. We gaan nu controleren of de functie voldoet aan de eigenschap dat als je Y weer er afhaalt, je X overhoud.
+Specifieke nummers worden niet getest. Je gaat nu controleren of de functie voldoet aan de eigenschap dat als je Y weer er afhaalt, je X overhoud.
 
 Bij elke test genereert Quickcheck random integers voor elk argument. Standaard worden er 100 combinaties getest, en dit aantal is voor uitgebreidere testen stevig op te voeren.
 
@@ -110,29 +109,41 @@ test2(_Config) ->
 
 Stel, je hebt een flinke hoeveelheid automatische testen geïmplementeerd. Het draaien van alle geavanceerde testen kan hierdoor lang duren en je ontwikkel systeem flink belasten Om deze, en [nog meer goede redenen](http://en.wikipedia.org/wiki/Continuous_integration#Advantages_and_disadvantages), is [Continuous integration](http://en.wikipedia.org/wiki/Continuous_integration) aan te raden. 
 
-Er zijn legio systemen waarmee het mogelijk is om dit voor Erlang op te zetten. In deze post gebruiken we het hosted systeem [Travis-CI](http://travis-ci.org). Deze dienst ondersteunt Erlang, integreert met het Populaire github en zorgt voor een vliegende start. En het is gratis voor open source projecten. 
+Er zijn legio systemen waarmee het mogelijk is om dit voor Erlang op te zetten. In deze post wordt het hosted systeem [Travis-CI](http://travis-ci.org) gebruikt als voorbeeld. Deze dienst ondersteunt Erlang, integreert met het Populaire github en zorgt voor een vliegende start. En het is gratis voor open source projecten. 
 
 ### Travis-CI Setup
 
-<a href="http://www.youtube.com/watch?v=YxJJu6mShiA">![Setup](https://raw.github.com/wardbekker/ci_quickstart/master/images/signing_and_switch.png)</a>
+Deze video toont hoe je start met Travis-CI:
+
+* Log in met je Github account gegevens.
+* Ga naar de Travis-CI *profile* pagina.
+* Schakel de gewenste Github *repository*  aan.
+
+That's it!
+
+<a href="http://www.youtube.com/watch?v=YxJJu6mShiA" target="_blank">![Setup](https://raw.github.com/wardbekker/ci_quickstart/master/images/signing_and_switch.png)</a>
 
 ### Travis-CI Success Run
 
-<a href="http://www.youtube.com/watch?v=rJWRY1Uf_qg">![Success](https://raw.github.com/wardbekker/ci_quickstart/master/images/success.png)</a>
+Deze video toont hoe Travis-CI een geslaagde *integration build*
+rapporteerd:
+
+<a href="http://www.youtube.com/watch?v=rJWRY1Uf_qg" target="_blank">![Success](https://raw.github.com/wardbekker/ci_quickstart/master/images/success.png)</a>
 
 ### Travis-CI Failure Run
 
-<a href="http://www.youtube.com/watch?v=5u8Kpz3m8ho">![Fail](https://raw.github.com/wardbekker/ci_quickstart/master/images/fail.png)</a>
+Deze video toont hoe Travis-CI een mislukte *integration build*
+rapporteerd:
 
-![Broken Build E-mail notification](https://raw.github.com/wardbekker/ci_quickstart/master/images/broken_email.png)
+<a href="http://www.youtube.com/watch?v=5u8Kpz3m8ho" target="_blank">![Fail](https://raw.github.com/wardbekker/ci_quickstart/master/images/fail.png)</a>
 
-![Fixed Build E-mail notification](https://raw.github.com/wardbekker/ci_quickstart/master/images/fixed_email.png)
+Als je e-mail adres in `.travis.yml` staat, krijg je ook een e-mail notificatie dat de laatste *commit* de build gebroken heeft:
 
-In dit filmje wordt uitgelegd hoe je je erlang project kan laten testen door Travis-CI.
+<img src="https://raw.github.com/wardbekker/ci_quickstart/master/images/broken_email.png" width="400" height="200" alt="Broken build e-mail notification" />
 
-Als de instructies goed zijn opgevolgd krijg je de volgende mail binnen als alle testen slagen.
+Als de fout verholpen is, krijg je de volgende e-mail als de build weer slaagt:
 
-Elke keer als je nu nieuwe code naar github 'pushed', worden de automatische testen gedraaid voor de x laatste versies van Erlang.
+<img src="https://raw.github.com/wardbekker/ci_quickstart/master/images/fixed_email.png " width="400" height="200" alt="Fixed build e-mail notification" />
 
 ## Samenvatting.
 
