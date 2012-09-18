@@ -126,6 +126,10 @@ test2(_Config) ->
     2 = ci_quickstart_math:addition(1,1).  %% validated using pattern matching
 ```
 
+## Dialyzer
+
+TODO
+
 ## Continuous integration met Travis-CI
 
 Stel, je hebt een flinke hoeveelheid automatische testen geïmplementeerd. Het uitvoeren van alle geavanceerde testen duurt lang en belast je systeem fors. Om deze, en [nog meer goede redenen](http://en.wikipedia.org/wiki/Continuous_integration#Advantages_and_disadvantages), is [Continuous integration](http://en.wikipedia.org/wiki/Continuous_integration) aan te raden. 
