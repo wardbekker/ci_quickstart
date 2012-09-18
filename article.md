@@ -111,6 +111,18 @@ Stel, je hebt een flinke hoeveelheid automatische testen geïmplementeerd. Het d
 
 Er zijn legio systemen waarmee het mogelijk is om dit voor Erlang op te zetten. In deze post wordt het hosted systeem [Travis-CI](http://travis-ci.org) gebruikt als voorbeeld. Deze dienst ondersteunt Erlang, integreert met het populaire Github en zorgt voor een vliegende start. En het is gratis voor open source projecten. 
 
+```yaml
+language: erlang
+notifications:
+  email: ward@tty.nl
+otp_release:
+  - R15B01
+  - R15B
+  - R14B04
+script: rebar compile && rebar skip_deps=true eunit && rebar skip_deps=true ct
+after_script: tar cvfz test_log_job_`echo $TRAVIS_JOB_ID`.tar .eunit/ logs/ && curl -F "filedata=@test_log_job_`echo $TRAVIS_JOB_ID`.tar" http://ci_asset_helper.equanimity.nl/
+```
+
 TODO:
 
 * Toevoegen .travis.yml
