@@ -10,13 +10,30 @@ De drie belangrijkste methoden worden hier kort besproken aan de hand van een te
 
 Je kan het test project *clonen* van Github met het volgende commando: 
 
-```bash
-git clone git@github.com:wardbekker/ci_quickstart.git
+```sh
+$ git clone git@github.com:wardbekker/ci_quickstart.git
 ```
+
+Voor het compileren van het project en uitvoeren van de testen wordt [Rebar](https://github.com/basho/rebar) gebruikt, een *sophisticated build-tool for Erlang projects that follows OTP principles*.  Je bouwt Rebar als volgt:
+
+```sh
+$ git clone git://github.com/basho/rebar.git
+$ cd rebar
+$ ./bootstrap
+Recompile: src/getopt
+...
+Recompile: src/rebar_utils
+==> rebar (compile)
+Congratulations! You now have a self-contained script called "rebar" in
+your current working directory. Place this script anywhere in your path
+and you can use rebar to build OTP-compliant apps.
+```
+
+
 
 ## Unit testing met EUnit ##
 
-Je begint met de eenvoudigste test methode; [EUnit](http://www.erlang.org/doc/apps/eunit/chapter.html). Dit is een unit testing bibliotheek voor Erlang. In een unit test controleer je of de functie goed werkt bij bekende input en resultaat. 
+Je begint met de eenvoudigste test methode; [EUnit](http://www.erlang.org/doc/apps/eunit/chapter.html). Dit is een unit testing bibliotheek voor Erlang. In een unit test controleer je of de functie goed werkt bij bekende input en resultaat. In dit voorbeeld heb je de functie `addition` geimplementeerd in de module `ci_quickstart_math` en twee *assertions*. (Je voert deze test uit op de commandline met: `rebar get-deps compile eunit`):
 
 ```erlang
 -module(ci_quickstart_math).
@@ -43,7 +60,7 @@ Het slechte nieuws is dat de waarde van deze test zeer laag is. Weet je nu zeker
 * `addition(2,2) == 4`
 * `addition(1,1) /= 3`
 
-Stel, je verandert de function `addition`:
+Stel, je verandert de implementatie van de function `addition` in:
 
 ```erlang
  addition(X, Y) ->
@@ -77,7 +94,7 @@ prop_sum() ->
 
 Specifieke nummers worden niet getest. Je gaat nu controleren of de functie voldoet aan de eigenschap dat als je Y weer er afhaalt, je X overhoud.
 
-Bij elke test genereert Quickcheck random integers voor elk argument. Standaard worden er 100 combinaties getest, en dit aantal is voor uitgebreidere testen stevig op te voeren.
+Bij elke test genereert Quickcheck random integers voor elk argument. Standaard worden er 100 combinaties getest, en dit aantal voer je op .
 
 De uitdaging bij het werken met QuickCheck is het bedenken van de eigenschappen van de functie. Dit is lastiger dan het maken van een unit test. Sterker nog, het schrijven van de functie is vaak nog eenvoudiger dan het redeneren over de eigenschappen. Het positieve effect van QuickCheck op de kwaliteit van je code, en de manier waarop je als developer over je code nadenkt maakt deze tool een zeer waardevol onderdeel van je test gereedschapskist.
 
@@ -107,7 +124,7 @@ test2(_Config) ->
 
 ## Continuous integration met Travis-CI
 
-Stel, je hebt een flinke hoeveelheid automatische testen geïmplementeerd. Het draaien van alle geavanceerde testen kan hierdoor lang duren en je ontwikkel systeem flink belasten Om deze, en [nog meer goede redenen](http://en.wikipedia.org/wiki/Continuous_integration#Advantages_and_disadvantages), is [Continuous integration](http://en.wikipedia.org/wiki/Continuous_integration) aan te raden. 
+Stel, je hebt een flinke hoeveelheid automatische testen geïmplementeerd. Het uitvoeren van alle geavanceerde testen kan hierdoor lang duren en je ontwikkel systeem flink belasten Om deze, en [nog meer goede redenen](http://en.wikipedia.org/wiki/Continuous_integration#Advantages_and_disadvantages), is [Continuous integration](http://en.wikipedia.org/wiki/Continuous_integration) aan te raden. 
 
 Er zijn legio systemen waarmee het mogelijk is om dit voor Erlang op te zetten. In deze post wordt het hosted systeem [Travis-CI](http://travis-ci.org) gebruikt als voorbeeld. Deze dienst ondersteunt Erlang, integreert met het populaire Github en zorgt voor een vliegende start. En het is gratis voor open source projecten. 
 
@@ -130,7 +147,7 @@ otp_release: // Travis-CI test/bouwt je project voor meerdere Erlang/OTP versies
 
 Deze video toont hoe je start met Travis-CI:
 
-* Log in met je Github account gegevens.
+* Log in met je Github account.
 * Ga naar de Travis-CI *profile* pagina.
 * Schakel de gewenste Github *repository* in.
 
