@@ -8,13 +8,13 @@ De drie belangrijkste methoden worden hier kort besproken aan de hand van een te
 * [Quickcheck](#quickcheck)
 * [Common test](#common-test)
 
-Je kan het test project *clonen* van Github met het volgende commando: 
+Je *cloned* het project van Github met het volgende commando: 
 
 ```sh
 $ git clone git@github.com:wardbekker/ci_quickstart.git
 ```
 
-Voor het compileren van het project en uitvoeren van de testen wordt [Rebar](https://github.com/basho/rebar) gebruikt, een *sophisticated build-tool for Erlang projects that follows OTP principles*.  Je bouwt Rebar als volgt:
+Voor het compileren van het project en uitvoeren van de testen gebruik je [Rebar](https://github.com/basho/rebar), een *sophisticated build-tool for Erlang projects that follows OTP principles*.  Je bouwt Rebar als volgt:
 
 ```sh
 $ git clone git://github.com/basho/rebar.git
@@ -75,7 +75,7 @@ Wat nu?
 
 ## QuickCheck ##
 
-Wat je eigenlijk wil is een test methode dat alle mogelijke input variaties kan genereren en de bijbehorende output kan controleren. Deze methode heet [QuickCheck](http://en.wikipedia.org/wiki/QuickCheck). Voor Erlang zijn er een aantal QuickCheck frameworks beschikbaar:
+Wat je eigenlijk wil is een test methode dat alle mogelijke input variaties genereerd en de bijbehorende output controleert. Deze methode heet [QuickCheck](http://en.wikipedia.org/wiki/QuickCheck). Voor Erlang zijn er een aantal QuickCheck frameworks beschikbaar:
 
 *  [Quvic QuickCheck](http://www.quviq.com)
 *  [ProPEr](https://github.com/manopapad/proper)
@@ -124,10 +124,9 @@ test2(_Config) ->
 
 ## Continuous integration met Travis-CI
 
-Stel, je hebt een flinke hoeveelheid automatische testen geïmplementeerd. Het uitvoeren van alle geavanceerde testen kan hierdoor lang duren en je ontwikkel systeem flink belasten Om deze, en [nog meer goede redenen](http://en.wikipedia.org/wiki/Continuous_integration#Advantages_and_disadvantages), is [Continuous integration](http://en.wikipedia.org/wiki/Continuous_integration) aan te raden. 
+Stel, je hebt een flinke hoeveelheid automatische testen geïmplementeerd. Het uitvoeren van alle geavanceerde testen duurt lang en belast je systeem fors. Om deze, en [nog meer goede redenen](http://en.wikipedia.org/wiki/Continuous_integration#Advantages_and_disadvantages), is [Continuous integration](http://en.wikipedia.org/wiki/Continuous_integration) aan te raden. 
 
-Er zijn legio systemen waarmee het mogelijk is om dit voor Erlang op te zetten. In deze post wordt het hosted systeem [Travis-CI](http://travis-ci.org) gebruikt als voorbeeld. Deze dienst ondersteunt Erlang, integreert met het populaire Github en zorgt voor een vliegende start. En het is gratis voor open source projecten. 
-
+Er zijn legio systemen waarmee het mogelijk is om continuous integration voor Erlang op te zetten. In dit voorbeeld gebruik je het hosted systeem [Travis-CI](http://travis-ci.org). Deze dienst ondersteunt Erlang, integreert met het populaire Github en zorgt voor een vliegende start. En het is gratis voor open source projecten. 
 
 ### Voorbereiding
 
