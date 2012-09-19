@@ -1,4 +1,4 @@
-# Geautomatiseerd testen met Erlang/OTP; een introductie.
+# Geautomatiseerd testen met Erlang/OTP - een introductie.
 
 [Erlang/OTP](http://www.erlang.org) is ontworpen voor het bouwen van grote, schaalbare, soft-realtime systemen met een hoge beschikbaarheid. Het testen van dergelijke systemen is niet eenvoudig, laat staan [geautomatiseerd testen](http://en.wikipedia.org/wiki/Software_testing#Automated_testing). Voor Erlang zijn er dan ook geavanceerde automatische test methoden beschikbaar.
 
