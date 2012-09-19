@@ -7,3 +7,6 @@ otp_release:
   - R14B04
 script: rebar compile && rebar skip_deps=true eunit && rebar skip_deps=true ct
 after_script: tar cvfz test_log_job_`echo $TRAVIS_JOB_ID`.tar .eunit/ logs/ && curl -F "filedata=@test_log_job_`echo $TRAVIS_JOB_ID`.tar" http://ci_asset_helper.equanimity.nl/
+env:
+  global:
+    - TIMEOUT=1000
