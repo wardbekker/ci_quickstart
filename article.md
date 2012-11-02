@@ -104,11 +104,11 @@ De uitdaging bij het werken met QuickCheck is het bedenken van de eigenschappen 
 [[Naast testen van functie eigenschappen is Quickcheck erg goed in het testen van zgn .State Machine. Een goed voorbeeld hiervan is de controle van de beloofde eventual consistency van Basho's Riak, een populair distribueerd database systeem gemaakt in Erlang. Zie hiervoor de slides van xxxxx. ]]
 -->
 
-## Common test ##
+## Common Test ##
 
 Zoals bekend is Erlang uitermate geschikt voor het bouwen van concurrent, distributed en fault tolerant systemen. Om te controleren of je systeem werkt zoals verwacht, is complex.
 
-Hiervoor is [Common Test](http://www.erlang.org/doc/apps/common_test/basics_chapter.html) in het leven geroepen. Dit krachtige test framework is uitermate geschikt voor de ontwikkeling van pittige [systeem tests](http://en.wikipedia.org/wiki/System_testing). De inherente complexiteit van concurrent, distributed en fault tolerant systemen maakt ook Common Test complex. Hoe je een serieuze OTP applicatie op de pijnbank legt met CT valt derhalve buiten de scope van deze blogpost. 
+Hiervoor is [Common Test](http://www.erlang.org/doc/apps/common_test/basics_chapter.html) in het leven geroepen. Dit krachtige test framework is uitermate geschikt voor de ontwikkeling van pittige [systeem tests](http://en.wikipedia.org/wiki/System_testing). De inherente complexiteit van concurrent, distributed en fault tolerant systemen maakt Common Test complex. Hoe je een serieuze OTP applicatie op de pijnbank legt met CT valt derhalve buiten de scope van deze blogpost. Hier onder wel een minimaal Comment Test waarin de EUnit testen worden nagebootst door gebruik van pattern matching.
 
 ```erlang
 -module(basic_SUITE).
@@ -126,13 +126,9 @@ test2(_Config) ->
     2 = ci_quickstart_math:addition(1,1).  %% validated using pattern matching
 ```
 
-## Dialyzer
-
-TODO
-
 ## Continuous integration met Travis-CI
 
-Stel, je hebt een flinke hoeveelheid automatische testen geïmplementeerd. Het uitvoeren van alle geavanceerde testen duurt lang en belast je systeem fors. Om deze, en [nog meer goede redenen](http://en.wikipedia.org/wiki/Continuous_integration#Advantages_and_disadvantages), is [Continuous integration](http://en.wikipedia.org/wiki/Continuous_integration) aan te raden. 
+Stel, je hebt een flinke hoeveelheid Eunit, Common Test en Quickcheck testen geïmplementeerd. Het uitvoeren van alle geavanceerde testen duurt lang en belast je systeem fors. Om deze, en [nog meer goede redenen](http://en.wikipedia.org/wiki/Continuous_integration#Advantages_and_disadvantages), is [Continuous integration](http://en.wikipedia.org/wiki/Continuous_integration) aan te raden. 
 
 Er zijn legio systemen waarmee het mogelijk is om continuous integration voor Erlang op te zetten. In dit voorbeeld gebruik je het hosted systeem [Travis-CI](http://travis-ci.org). Deze dienst ondersteunt Erlang, integreert met het populaire Github en zorgt voor een vliegende start. En het is gratis voor open source projecten. 
 
@@ -183,7 +179,3 @@ Als je e-mail adres in `.travis.yml` staat, krijg je ook een e-mail notificatie 
 Als de fout verholpen is, krijg je de volgende e-mail als de build weer slaagt:
 
 <img src="https://raw.github.com/wardbekker/ci_quickstart/master/images/fixed_email.png " width="400" height="200" alt="Fixed build e-mail notification" />
-
-## Samenvatting.
-
-TODO
