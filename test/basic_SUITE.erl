@@ -7,7 +7,7 @@
 all() -> [test1,test2].
 
 test1(_Config) ->
-    4 = ci_quickstart_math:addition(1,2).
+    3 = ci_quickstart_math:addition(1,2).
 
 test2(_Config) ->
     2 = ci_quickstart_math:addition(1,1).
